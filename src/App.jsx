@@ -25,7 +25,7 @@ export default function App() {
 
   const addContact = (newContact) => {
     setContacts((prevContacts) => {
-      return [...prevContacts, newContact];
+      return [newContact, ...prevContacts];
     });
   };
 
@@ -57,7 +57,7 @@ export default function App() {
 
   return (
     <div className="cardBox">
-      <FaAddressBook size="50" className="iconBook"/>
+      <FaAddressBook className="iconBook"/>
       <h1 className="mainTitle">Phonebook</h1>
       <ContactForm addContact={addContact} />
       <SearchBox filterContacts={filter} setFilterContacts={setFilter} />
