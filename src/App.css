@@ -1,4 +1,10 @@
-.title {
+.iconBook {
+  color: #b8b8ff;
+  display: block;
+  margin: 0 auto 16px auto; 
+}
+
+.mainTitle {
   text-align: center;
   font-size: 40px;
   margin-bottom: 20px;
@@ -11,7 +17,29 @@
 
 .cardBox {
   padding: 20px;
+}
+
+.boxShadow {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border-radius: 0 0 8px 8px;
+}
+
+.subtitleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
   position: relative; 
+}
+
+.preTitle {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 32px;
+  background-color: #b8b8ff87;
+  color: #9381ff;
+  padding: 20px 40px 20px 40px;
+  margin-top: 30px;
+  border-radius: 8px 8px 0 0;
 }
 
 .undoButton {
@@ -25,8 +53,8 @@
   color: #f8f7ff;
   cursor: pointer;
   position: absolute;
-  top: 50%;
-  right: 50%;
+  right: 6.4%;
+  top: 47%;
   transition: all 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98);
 }
 
@@ -34,8 +62,26 @@
   background-color: #b8b8ff;
 }
 
-.iconBook {
-  color: #b8b8ff;
-  display: block;
-  margin: 0 auto 16px auto; 
+@media screen and (min-width: 300px) and (max-width: 460px) {
+  .preTitle {
+    text-align: left;
+  }
+
+  .undoButton {
+    position: absolute;
+    right: 8%;
+    top: 47%;
+   }
 }
+
+@media screen and (min-width: 1560px) {
+  .undoButton {
+    position: absolute;
+    right: 9.3%;
+    top: 47%;
+   }
+}
+
+
+
+

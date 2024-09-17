@@ -58,12 +58,16 @@ export default function App() {
   return (
     <div className="cardBox">
       <FaAddressBook size="50" className="iconBook"/>
-      <h1 className="title">Phonebook</h1>
+      <h1 className="mainTitle">Phonebook</h1>
       <ContactForm addContact={addContact} />
-      <SearchBox onFilter={setFilter} filter={filter} />
-      <ContactList contacts={filteredContacts} deleteContact={deleteContact}/>
-      {deletedContact && <button className="undoButton" onClick={undoDelete}>Undo</button>}
+      <SearchBox filterContacts={filter} setFilterContacts={setFilter} />
+      <div className="boxShadow">
+        <div className="subtitleWrapper">
+          <h2 className="preTitle">Contacts</h2>
+          {deletedContact && <button className="undoButton" onClick={undoDelete}>Undo</button>}
+        </div>
+        <ContactList contacts={filteredContacts} deleteContact={deleteContact}/>
+      </div>
     </div>
-
   );
 };
