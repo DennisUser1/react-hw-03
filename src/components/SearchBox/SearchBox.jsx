@@ -1,3 +1,4 @@
+import { FaSistrix } from 'react-icons/fa';
 import styles from "./SearchBox.module.css";
 
 export default function SearchBox({ filterContacts, setFilterContacts }) {
@@ -7,12 +8,15 @@ export default function SearchBox({ filterContacts, setFilterContacts }) {
   return (
     <div className={styles.searchWrapper}>
       <label>
-        <input 
-        type="search" 
-        name="search"
-        placeholder="Search contacts"
-        value={filterContacts} 
-        onChange={handleSearch}/>
+        <div className={styles.inputContainer}>
+          <input 
+            type="search" 
+            name="search"
+            placeholder="Search contacts"
+            value={filterContacts} 
+            onChange={handleSearch}/>
+          <FaSistrix className={styles.iconSearch} />
+        </div>
         Find contacts by name
       </label>
     </div>

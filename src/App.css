@@ -1,7 +1,7 @@
 .iconBook {
   color: #9381ff;
   display: block;
-  margin: 0 auto 16px auto; 
+  margin: 0 auto 5px auto; 
   font-size: 80px;
 }
 
@@ -37,7 +37,7 @@
   text-align: center;
   font-size: 32px;
   background-color: #b8b8ff87;
-  color: #9381ff;
+  color: #3a2a9b;
   padding: 20px 40px 20px 40px;
   margin-top: 30px;
   border-radius: 8px 8px 0 0;
@@ -52,7 +52,7 @@
   height: 40px;
   border-radius: 8px;
   border: none;
-  background-color: #9381ff;
+  background-color: #3a2a9b;
   color: #f8f7ff;
   cursor: pointer;
   position: absolute;
@@ -62,7 +62,7 @@
 }
 
 .undoButton:hover {
-  background-color: #b8b8ff;
+  background-color: #261c68;
 }
 
 @media screen and (min-width: 300px) and (max-width: 460px) {

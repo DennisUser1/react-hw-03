@@ -21,10 +21,16 @@ label {
     gap: 8px;
     font-weight: 600; 
 }
+
+.inputContainer {
+    position: relative;
+    max-width: 200px;
+    width: 100%;
+}
   
 input {
-    max-width: 200px;
-    padding: 10px 12px;
+    width: 100%;
+    padding: 10px 35px 10px 12px; 
     margin-bottom: 10px;
     border-radius: 8px;
     outline: none;
@@ -35,5 +41,15 @@ input {
 input:hover,
 input:focus {
   border: 1px solid #9381ff;
+}
+
+.iconSearch {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+    width: 16px;
+    height: 16px;
 }
 
