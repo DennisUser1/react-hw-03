@@ -12,12 +12,13 @@
     hyphens: auto;
     white-space: normal;
     max-width: 164px;
+    height: 50px;
     display: -webkit-box;
     -webkit-line-clamp: 2;  
 }
   
 .number {
-    font-size: 16px;
+    font-size: 15.5px;
     width: 165px;
 }
 
@@ -26,7 +27,7 @@
     flex-direction: row;
     align-items: center;
     gap: 5px;
-    max-width: 185px; 
+    max-width: 190px; 
 }
 
 .iconCardWrapper:first-of-type {
@@ -65,6 +66,14 @@
     .name {
         font-size: 17.5px;
     }
+
+    .number {
+        font-size: 16px;
+    }
+
+    .iconCardWrapper {
+        max-width: 185px; 
+    }
 }  
 
 @media screen and (min-width: 300px) and (max-width: 359px) {
@@ -78,11 +87,18 @@
     }
 
     .number {
-        font-size: 12.8px;
+        font-size: 13px;
         width: 135px;
     }    
+
+    .iconReUser, .iconIphone {
+        width: 13px;
+        height: 13px;
+    }
 }
 
-
-
-
+@media screen and (min-width: 1050px) {
+    .iconCardWrapper:first-of-type {
+       padding-bottom: 10px;
+    }
+}
