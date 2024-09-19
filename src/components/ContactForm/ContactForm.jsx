@@ -51,8 +51,11 @@ export default function ContactForm({ addContact }) {
         </div>
         <ErrorMessage name="number" component="span" className={styles.error} />
 
-        <button type="submit" className={styles.button}>
+        <button type="submit" className={clsx(styles.addButton)}>
           Add Contact
+        </button>
+        <button className={clsx(styles.resetButton)} type="reset">
+          Reset
         </button>
       </Form>
     </Formik>

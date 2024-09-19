@@ -3,10 +3,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px;
+    padding: 30px 0 30px 0;
     padding-bottom: 20px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    /* border-top-left-radius: 8px;
+    border-top-right-radius: 8px; */
     margin: 0 auto;
     background-color: #f8f7ff;
 }
@@ -19,7 +19,7 @@
 
 .inputWrapper {
   position: relative;
-  max-width: 200px;
+  max-width: 280px;
   width: 100%; 
 }
 
@@ -47,6 +47,11 @@
   height: 16px;
   color: #333;
 }
+
+.input:focus + .iconName,
+.input:focus + .iconNumber {
+  color: #9381ff; 
+}
   
 .error {
     font-size: 14px;
@@ -54,13 +59,14 @@
     margin-bottom: 10px;
     white-space: pre-line; 
     text-align: center;
+    width: 250px;
 }
   
-.button {
+.addButton {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    width: 280px;
     height: 40px;
     /* padding: 10px; */
     border-radius: 9px;
@@ -68,13 +74,14 @@
     background-color: #6e57f4;
     color:  #f8f7ff;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 14px;
     transition: all 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98);
     position: relative; 
     overflow: hidden;
+    margin-bottom: 15px;
 }
 
-.button:after {
+.addButton:after {
     content: '';
     width: 100%;
     height: 200%;
@@ -93,8 +100,23 @@
     animation: blink 3s infinite;
   }
 
-button:hover {
+.addButton:hover {
     background-color: #5a4cfa;
+}
+
+.resetButton {
+  cursor: pointer;
+  width: 280px;
+  height: 40px;
+  border: 1.5px solid #6e57f4;
+  border-radius: 9px;
+  color: #6e57f4;
+  transition: all 0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98);
+}
+
+.resetButton:hover {
+  background-color: #6e57f4;
+  color:  #f8f7ff;
 }
 
 @keyframes blink {
@@ -107,6 +129,16 @@ button:hover {
     100% {
       left: 100%;
     }
+}
+
+@media screen and (min-width: 300px) and (max-width: 359px) {
+  .inputWrapper {
+    max-width: 240px;
+  }
+
+  .addButton, .resetButton {
+    width: 240px;
+  }
 }
   
 

@@ -5,7 +5,7 @@ import styles from "./Contact.module.css";
 export default function Contact({ id, name, number, deleteContact }) {
     return (
       <>
-        <div className={styles.infoCardWrapper}>
+        <div className={styles.contactCardWrapper}>
           <div className={styles.iconCardWrapper}>
               <FaRegUser size="16" />
               <p className={styles.name}>

@@ -1,23 +1,51 @@
+import { useId } from "react";
 import { FaSistrix } from 'react-icons/fa';
 import styles from "./SearchBox.module.css";
 
-export default function SearchBox({ filterContacts, setFilterContacts }) {
-  const handleSearch = (event) => {
-    setFilterContacts(event.target.value);
+export default function SearchBox({ filterByName, setFilterByName, filterByNumber, setFilterByNumber }) {
+  const nameSearchId = useId();
+  const numberSearchId = useId();
+
+  const handleNameSearch = (event) => {
+    setFilterByName(event.target.value);
+    setFilterByNumber(""); 
   };
+
+  const handleNumberSearch = (event) => {
+    setFilterByNumber(event.target.value);
+    setFilterByName(""); 
+  };
+
   return (
     <div className={styles.searchWrapper}>
-      <label>
+      <label htmlFor={nameSearchId}>
         <div className={styles.inputContainer}>
-          <input 
-            type="search" 
-            name="search"
-            placeholder="Search contacts"
-            value={filterContacts} 
-            onChange={handleSearch}/>
+          <input
+            id={nameSearchId}
+            type="search"
+            name="searchName"
+            placeholder="Search contacts by name"
+            value={filterByName}
+            onChange={handleNameSearch}
+          />
           <FaSistrix className={styles.iconSearch} />
         </div>
         Find contacts by name
+      </label>
+      
+      <label htmlFor={numberSearchId}>
+        <div className={styles.inputContainer}>
+          <input
+            id={numberSearchId}
+            type="search"
+            name="searchNumber"
+            placeholder="Search contacts by number"
+            value={filterByNumber}
+            onChange={handleNumberSearch}
+          />
+          <FaSistrix className={styles.iconSearch} />
+        </div>
+        Find contacts by number
       </label>
     </div>
   );
