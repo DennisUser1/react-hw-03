@@ -9,7 +9,7 @@ export const validationContactSchema = Yup.object().shape({
     .required('Here is a required field'),
   number: Yup.string()
     .trim()
-    .matches(/^[0-9+\-()\s]*$/, "Must be a valid phone number! Phone number must contain only digits and symbols (+, -, ( , ))")
+    .matches(/^[0-9+\-()\s]*$/, "Invalid symbols phone number! Please, use only digits and symbols ( + or - ( or ))")
     .min(7, 'Too Short Number! Minimum characters: 7')
     .max(15, 'Too Long Number! Maximum characters: 15')
     .required('Here is a required field'),
