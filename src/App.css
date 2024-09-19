@@ -96,6 +96,7 @@
   .preTitle {
     margin-right: 0;
     margin-left: 0;
+    font-size: 24px;
   }
 }
 
@@ -134,5 +135,11 @@
 @media screen and (min-width: 461px) and (max-width: 767px) {
   .preTitle {
     font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 359px) {
+  .messageContentWrapper {
+      width: 260px;
   }
 }

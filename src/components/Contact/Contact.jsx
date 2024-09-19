@@ -7,13 +7,13 @@ export default function Contact({ id, name, number, deleteContact }) {
       <>
         <div className={styles.contactCardWrapper}>
           <div className={styles.iconCardWrapper}>
-              <FaRegUser size="16" />
+              <FaRegUser className={styles.iconReUser}/>
               <p className={styles.name}>
               {name}
               </p>
           </div>
           <div className={styles.iconCardWrapper}>
-              <MdPhoneIphone size="16" />
+              <MdPhoneIphone className={styles.iconIphone}/>
               <p className={styles.number}>
               {number}
               </p>

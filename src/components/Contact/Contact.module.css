@@ -11,15 +11,16 @@
     /* word-break: keep-all; */
     hyphens: auto;
     white-space: normal;
-    max-width: 165px;
+    max-width: 164px;
     display: -webkit-box;
     -webkit-line-clamp: 2;  
 }
   
 .number {
     font-size: 16px;
+    width: 165px;
 }
-  
+
 .iconCardWrapper {
     display: flex;
     flex-direction: row;
@@ -31,6 +32,11 @@
 .iconCardWrapper:first-of-type {
     padding-bottom: 6px;
     border-bottom: 0.5px solid #6e57f4;
+}
+
+.iconReUser, .iconIphone {
+    width: 16px;
+    height: 16px;
 }
 
 .deleteButton {
@@ -68,11 +74,12 @@
     
     .name {
         max-width: 136px;
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .number {
-        font-size: 14px;
+        font-size: 12.8px;
+        width: 135px;
     }    
 }
 
