@@ -7,8 +7,8 @@
 .name {
     font-size: 18px;
     word-wrap: break-word; 
-    /* word-break: break-all; */
-    word-break: keep-all;
+    word-break: break-all;
+    /* word-break: keep-all; */
     hyphens: auto;
     white-space: normal;
     max-width: 165px;
@@ -67,7 +67,7 @@
     }
     
     .name {
-        max-width: 145px;
+        max-width: 136px;
         font-size: 16px;
     }
 

@@ -59,7 +59,7 @@
     margin-bottom: 10px;
     white-space: pre-line; 
     text-align: center;
-    width: 250px;
+    width: 200px;
 }
   
 .addButton {
@@ -141,4 +141,18 @@
   }
 }
   
+@media (hover: none) {
+  .resetButton:hover {
+    background-color: transparent;
+    border: 1.5px solid #6e57f4;
+    color: #6e57f4;
+  }
+}
 
+@media screen (max-width: 1024px) {
+  .resetButton:active {
+    background-color: #6e57f4;
+    border: 1.5px solid #6e57f4;
+    color: #6e57f4;
+  }
+}
