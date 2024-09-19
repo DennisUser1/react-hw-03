@@ -42,7 +42,7 @@ export default function ContactForm({ addContact }) {
         <label className={styles.label} htmlFor={numberFieldId}>Number</label>
         <div className={styles.inputWrapper}>
           <Field
-            type="text"
+            type="tel"
             name="number"
             id={numberFieldId}
             className={styles.input}
