@@ -54,7 +54,7 @@ export default function ContactForm({ addContact }) {
         <button type="submit" className={clsx(styles.addButton)}>
           Add Contact
         </button>
-        <button className={clsx(styles.resetButton)} type="reset">
+        <button type="reset" className={clsx(styles.resetButton)}>
           Reset
         </button>
       </Form>

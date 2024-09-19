@@ -85,7 +85,7 @@ export default function App() {
             <div className="messageContentWrapper">
               <FaChess className="messageIconInfo" size="16"/>
               <p className="messageInfo">
-                Not contacts available at the moment. 
+                Not contacts are available at the moment. 
                 <br/> 
                 Please, add some contacts to view them here.
               </p>

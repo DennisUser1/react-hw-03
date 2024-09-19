@@ -67,8 +67,9 @@
 .messageContentWrapper {
   display: flex;
   align-items: center;
-  padding: 16px 18px 25px 18px;
-  gap: 6px; 
+  flex-direction: column;
+  padding: 25px 18px 25px 18px;
+  gap: 8px; 
   background-color: #f8f7ff;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   width: 300px;
@@ -79,7 +80,6 @@
 .messageInfo {
   text-align: center;
   color: red;
-  /* font-weight: 600; */
   width: 240px;
 }
 
