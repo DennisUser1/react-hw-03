@@ -43,6 +43,7 @@ input:focus {
 
 input:focus + .iconSearch {
     color: #9381ff; 
+    animation: spin 0.5s ease-in-out;
 }
 
 input:focus::placeholder {
@@ -57,6 +58,15 @@ input:focus::placeholder {
     color: #333;
     width: 16px;
     height: 16px;
+}
+
+@keyframes spin {
+    0% {
+      transform: translateY(-50%) rotate(0deg);
+    }
+    100% {
+      transform: translateY(-50%) rotate(360deg);
+    }
 }
 
 @media screen and (min-width: 300px) and (max-width: 359px) {

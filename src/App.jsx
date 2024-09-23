@@ -26,25 +26,39 @@ export default function App() {
     setContacts((prevContacts) => [newContact, ...prevContacts]);
   };
 
+  const [wasLastDeleted, setWasLastDeleted] = useState(false); 
+
   const deleteContact = (contactId) => {
     setContacts((prevContacts) => {
-      const indexToDelete = prevContacts.findIndex(contact => contact.id === contactId);
+      const indexToDelete = prevContacts.findIndex(contact => contact.id == contactId);
       const contactToDelete = prevContacts[indexToDelete];
+      
       setDeletedContact(contactToDelete);
       setDeletedContactIndex(indexToDelete);
+      
+      setWasLastDeleted(prevContacts.length == 1);
+      
       return prevContacts.filter((contact) => contact.id !== contactId);
     });
   };
-
+  
   const undoDelete = () => {
     if (deletedContact) {
-      setContacts(prevContacts => {
+      setContacts((prevContacts) => {
         const newContacts = [...prevContacts];
-        newContacts.splice(deletedContactIndex, 0, deletedContact);
+  
+        if (wasLastDeleted) {
+          newContacts.push(deletedContact);
+        } else {
+          newContacts.splice(deletedContactIndex, 0, deletedContact);
+        }
+  
         return newContacts;
       });
+  
       setDeletedContact(null);
       setDeletedContactIndex(null);
+      setWasLastDeleted(false);
     }
   };
 
@@ -58,7 +72,7 @@ export default function App() {
     return true;
   });
 
-  const noContacts = contacts.length === 0;
+  const noContacts = contacts.length == 0;
 
   return (
     <div className="cardBox">
@@ -72,13 +86,15 @@ export default function App() {
         setFilterByNumber={setFilterByNumber}
       />
       <div className="boxShadow">
-        <div className="subtitleWrapper">
-          <h2 className="preTitle">Contacts</h2>
-          {!noContacts && deletedContact && (
-            <button className="undoButton" onClick={undoDelete}>
-              Undo
-            </button>
-          )}
+        <div className="boxBackground">
+          <div className={noContacts || !deletedContact ? "centeredTitleWrapper" : "subtitleWrapper"}>
+            <h2 className="preTitle">Contacts</h2>
+            {!noContacts && deletedContact && (
+              <button className="undoButton" onClick={undoDelete}>
+                Undo
+              </button>
+            )}
+          </div>
         </div>
         {noContacts ? (
           <div className="messageWrapper">
@@ -94,7 +110,7 @@ export default function App() {
         ) : (
           <ContactList contacts={filteredContacts} deleteContact={deleteContact} />
         )}
-      </div>
-    </div>
+      </div>   
+    </div> 
   );
 };

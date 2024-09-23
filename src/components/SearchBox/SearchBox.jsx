@@ -24,7 +24,7 @@ export default function SearchBox({ filterByName, setFilterByName, filterByNumbe
             id={nameSearchId}
             type="search"
             name="searchName"
-            placeholder="Search contacts by name"
+            placeholder="Search by name"
             value={filterByName}
             onChange={handleNameSearch}
           />
@@ -39,7 +39,7 @@ export default function SearchBox({ filterByName, setFilterByName, filterByNumbe
             id={numberSearchId}
             type="search"
             name="searchNumber"
-            placeholder="Search contacts by number"
+            placeholder="Search by number"
             value={filterByNumber}
             onChange={handleNumberSearch}
           />

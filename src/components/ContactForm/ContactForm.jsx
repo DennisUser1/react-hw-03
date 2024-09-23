@@ -34,6 +34,9 @@ export default function ContactForm({ addContact }) {
             name="name"
             id={nameFieldId}
             className={styles.input}
+            autoComplete="off"
+            autoFocus
+            placeholder="Enter full name"
           />
           <FaRegUser className={clsx(styles.iconName)} />
         </div>
@@ -46,6 +49,8 @@ export default function ContactForm({ addContact }) {
             name="number"
             id={numberFieldId}
             className={styles.input}
+            autoComplete="off"
+            placeholder="+xx (xxx)-xxx-xx-xx"
           />
            <MdPhoneIphone className={clsx(styles.iconNumber)} />
         </div>

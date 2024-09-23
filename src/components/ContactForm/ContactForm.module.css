@@ -149,7 +149,7 @@
   }
 }
 
-@media screen (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .resetButton:active {
     background-color: #6e57f4;
     border: 1.5px solid #6e57f4;

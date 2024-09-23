@@ -25,18 +25,31 @@
   border-radius: 0 0 8px 8px;
 }
 
-.subtitleWrapper {
+.boxBackground {
+  background-color: #b8b8ff87;
+}
+
+.subtitleWrapper, 
+.centeredTitleWrapper {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  background-color: #b8b8ff87;
-  padding: 25px;
+  justify-content: center; 
+  margin-left: auto; 
+  margin-right: auto; 
+  position: relative;
+  width: 320px;
+  padding: 20px 20px 10px 20px;
+}
+
+.subtitleWrapper {
+  justify-content: space-between; 
 }
 
 .preTitle {
   font-size: 32px;
   color: #3a2a9b;
   text-transform: uppercase;
+  margin: 0;
 }
 
 .undoButton {
@@ -87,54 +100,79 @@
   color: red;
 }
 
-@media screen and (min-width: 300px) and (max-width: 359px) {
-  .subtitleWrapper {
-    padding: 30px 6px 20px 6px;
-    justify-content: space-around;
-  }
+@media screen and (min-width: 320px) and (max-width: 360px) { 
+  .subtitleWrapper, 
+  .centeredTitleWrapper {
+    position: relative;
+    width: 250px;
+    gap: 10px;
+}
 
   .preTitle {
-    margin-right: 0;
-    margin-left: 0;
+    text-align: center;
     font-size: 24px;
+  }
+
+  .undoButton {
+    position: absolute;
+    right: 7px;
   }
 }
 
-@media screen  and (min-width: 360px) and (max-width: 380px) {
-  .subtitleWrapper {
-    padding: 30px 12px 20px 12px;
-    justify-content: space-around;
+@media screen and (min-width: 360px) and (max-width: 380px) {
+  .subtitleWrapper, 
+  .centeredTitleWrapper {
+    position: relative;
+    width: 290px;
+    gap: 10px;
   }
-  
+
   .preTitle {
+    text-align: center;
     font-size: 24px;
-    margin-right: 30px;
-    margin-left: 30px;
+  }
+
+  .undoButton {
+    position: absolute;
+    right: 6px;
   }
 }
 
-@media screen and (min-width: 381px) and (max-width: 460px) {
-  .subtitleWrapper {
-    padding: 30px 20px 20px 20px;
-    justify-content: space-evenly; 
-  }
-  
+@media screen and (min-width: 380px) and (max-width: 768px) {
   .preTitle {
+    text-align: center;
     font-size: 24px;
-    margin-right: 36px;
-    margin-left: 36px;
+  }
+
+  .undoButton {
+    position: absolute;
+    right: 12px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1490px) {
+  .undoButton {
+    position: absolute;
+    right: 12px;
+  }
+}
+
+@media screen and (min-width: 1490px) {
+.subtitleWrapper, 
+  .centeredTitleWrapper {
+    position: relative;
+    width: 646px;
+    gap: 10px;
+  }
+  .undoButton {
+    position: absolute;
+    right: 0;
   }
 }
 
 @media screen and (min-width: 300px) and (max-width: 460px) {
   .iconBook {
     font-size: 60px;
-  }
-}
-
-@media screen and (min-width: 461px) and (max-width: 767px) {
-  .preTitle {
-    font-size: 24px;
   }
 }
 

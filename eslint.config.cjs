@@ -33,6 +33,7 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      'react/jsx-pascal-case': 'off',
       'react/prop-types': 0, 
     },
   },
