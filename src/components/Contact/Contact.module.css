@@ -61,6 +61,18 @@
 .deleteButton:hover {
     background-color: #5a4cfa;
 }
+
+@media (hover: none) {
+    .deleteButton:hover {
+        background-color: #5a4cfa;
+    }
+}
+  
+@media screen and (max-width: 1024px) {
+    .deleteButton:active {
+        background-color: #5a4cfa;
+    }
+}  
   
 @media screen and (min-width: 360px) and (max-width: 460px) {
     .name {

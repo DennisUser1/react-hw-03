@@ -9,8 +9,8 @@ export const validationContactSchema = Yup.object().shape({
     .required('Here is a required field!'),
   number: Yup.string()
     .trim()
-    .matches(/^[0-9+\-()\s]*$/, "Invalid symbols phone number! Please, use only digits and symbols. Example: + or - or ( or )")
-    .min(7, 'Too Short Number! Minimum characters: 7')
+    .matches(/^\+?(38|1|49|48|33)\s?\(?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/, "Invalid phone number! Please use the format: +xx (xxx)-xxx-xx-xx")
+    .min(13, 'Too Short Number! Minimum characters: 13')
     .max(19, 'Too Long Number! Maximum characters: 19')
     .required('Here is a required field!'),
 });

@@ -158,7 +158,7 @@
 }
 
 @media screen and (min-width: 1490px) {
-.subtitleWrapper, 
+  .subtitleWrapper, 
   .centeredTitleWrapper {
     position: relative;
     width: 646px;
