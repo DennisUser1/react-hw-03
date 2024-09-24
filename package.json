@@ -13,6 +13,7 @@
   "dependencies": {
     "@tippyjs/react": "^4.2.6",
     "clsx": "^2.1.1",
+    "flag-icon-css": "^4.1.7",
     "formik": "^2.4.6",
     "modern-normalize": "^3.0.1",
     "nanoid": "^5.0.7",

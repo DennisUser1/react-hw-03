@@ -30,8 +30,8 @@
   display: flex;
   align-items: center;
   justify-content: center; 
-  gap: 10px;
-  margin-left: 15px;
+  gap: 8px;
+  margin-left: 30px;
   margin-bottom: 10px;
   width: 100%;
 }
@@ -141,7 +141,7 @@
 
 .resetButton:hover {
   background-color: #6e57f4;
-  color:  #f8f7ff;
+  color: #f8f7ff;
 }
 
 @keyframes blink {

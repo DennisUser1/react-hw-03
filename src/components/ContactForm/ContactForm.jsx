@@ -7,6 +7,7 @@ import { MdPhoneIphone } from "react-icons/md";
 import { HiInformationCircle } from 'react-icons/hi';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import 'flag-icon-css/css/flag-icons.css';
 import { validationContactSchema } from '../../helpers/contactSchema';
 import styles from './ContactForm.module.css';
 import React from 'react';
@@ -18,17 +19,49 @@ const formatPhoneNumber = (value) => {
 
   if (countryCode) {
     const withoutCode = cleaned.slice(countryCode.length);
-    const match = withoutCode.match(/^(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})$/);
+    let formatted = '';
 
-    if (match) {
-      const part1 = match[1] ? ` (${match[1]})` : '';
-      const part2 = match[2] ? `-${match[2]}` : '';
-      const part3 = match[3] ? `-${match[3]}` : '';
-      const part4 = match[4] ? `-${match[4]}` : '';
-      return `${countryCode}${part1}${part2}${part3}${part4}`;
+    switch (countryCode) {
+      case '+38': // Ukraine
+        const matchUA = withoutCode.match(/^(\d{3})(\d{3})(\d{2})(\d{2})$/);
+        if (matchUA) {
+          formatted = `+38 (${matchUA[1]})-${matchUA[2]}-${matchUA[3]}-${matchUA[4]}`;
+        }
+        break;
+
+      case '+1': // USA
+        const matchUS = withoutCode.match(/^(\d{3})(\d{3})(\d{4})$/);
+        if (matchUS) {
+          formatted = `+1 (${matchUS[1]})-${matchUS[2]}-${matchUS[3]}`;
+        }
+        break;
+
+      case '+49': // Germany
+        const matchDE = withoutCode.match(/^(\d{3})(\d{3})(\d{4})$/);
+        if (matchDE) {
+          formatted = `+49 (${matchDE[1]})-${matchDE[2]}-${matchDE[3]}`;
+        }
+        break;
+
+      case '+48': // Poland
+        const matchPL = withoutCode.match(/^(\d{3})(\d{3})(\d{3})$/);
+        if (matchPL) {
+          formatted = `+48 (${matchPL[1]})-${matchPL[2]}-${matchPL[3]}`;
+        }
+        break;
+
+      case '+33': // France
+        const matchFR = withoutCode.match(/^(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/);
+        if (matchFR) {
+          formatted = `+33 (${matchFR[1]})-${matchFR[2]}-${matchFR[3]}-${matchFR[4]}-${matchFR[5]}`;
+        }
+        break;
+
+      default:
+        return value;
     }
+    return formatted || value; 
   }
-
   return value; 
 };
 
@@ -82,11 +115,26 @@ export default function ContactForm({ addContact }) {
                   <div className='marginTitleInfoTippy'>
                     <strong className='titleInfoTippy'>Supported Countries:</strong>
                       <ul>
-                        <li><span className='boldCountryInfo'>Ukraine:</span> +38 (xxx)-xxx-xx-xx</li>
-                        <li><span className='boldCountryInfo'>USA:</span> +1 (xxx)-xxx-xxxx</li>
-                        <li><span className='boldCountryInfo'>Germany:</span> +49 (xxx)-xxx-xxxx</li>
-                        <li><span className='boldCountryInfo'>Poland:</span> +48 (xxx)-xxx-xxx</li>
-                        <li><span className='boldCountryInfo'>France:</span> +33 (xx)-xx-xx-xx-xx</li>
+                        <li>
+                          <span className='flag-icon flag-icon-ua'></span>
+                          <span className='boldCountryInfo'>Ukraine:</span> +38 (xxx)-xxx-xx-xx
+                        </li>
+                        <li>
+                          <span className='flag-icon flag-icon-us'></span>
+                          <span className='boldCountryInfo'>USA:</span> +1 (xxx)-xxx-xxxx
+                        </li>
+                        <li>
+                          <span className='flag-icon flag-icon-de'>
+                            </span><span className='boldCountryInfo'>Germany:</span> +49 (xxx)-xxx-xxxx
+                        </li>
+                        <li>
+                          <span className='flag-icon flag-icon-pl'>
+                            </span><span className='boldCountryInfo'>Poland:</span> +48 (xxx)-xxx-xxx
+                        </li>
+                        <li>
+                          <span className='flag-icon flag-icon-fr'>
+                            </span><span className='boldCountryInfo'>France:</span> +33 (xx)-xx-xx-xx-xx
+                        </li>
                       </ul>
                   </div> 
                   <strong className='titleInfoTippy'>Input Format:</strong>
