@@ -30,22 +30,28 @@
   display: flex;
   align-items: center;
   justify-content: center; 
-  gap: 8px;
+  gap: 5px;
   margin-left: 30px;
   margin-bottom: 10px;
   width: 100%;
 }
 
 .spanWrapper {
-  width: 22px;
-  height: 22px;
+  display: flex;  
+  justify-content: center;
+  align-items: center; 
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 
 .infoIcon {
-  width: 22px;
-  height: 22px;
+  display: flex;  
+  justify-content: center;
+  align-items: center; 
+  width: 23px;
+  height: 23px;
   color: #6e57f4;
-  cursor: pointer;
 }
 
 .input {
