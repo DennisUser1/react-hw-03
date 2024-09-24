@@ -124,16 +124,16 @@ export default function ContactForm({ addContact }) {
                           <span className='boldCountryInfo'>USA:</span> +1 (xxx)-xxx-xxxx
                         </li>
                         <li>
-                          <span className='flag-icon flag-icon-de'>
-                            </span><span className='boldCountryInfo'>Germany:</span> +49 (xxx)-xxx-xxxx
+                          <span className='flag-icon flag-icon-de'></span>
+                            <span className='boldCountryInfo'>Germany:</span> +49 (xxx)-xxx-xxxx
                         </li>
                         <li>
-                          <span className='flag-icon flag-icon-pl'>
-                            </span><span className='boldCountryInfo'>Poland:</span> +48 (xxx)-xxx-xxx
+                          <span className='flag-icon flag-icon-pl'></span>
+                            <span className='boldCountryInfo'>Poland:</span> +48 (xxx)-xxx-xxx
                         </li>
                         <li>
-                          <span className='flag-icon flag-icon-fr'>
-                            </span><span className='boldCountryInfo'>France:</span> +33 (xx)-xx-xx-xx-xx
+                          <span className='flag-icon flag-icon-fr'></span>
+                            <span className='boldCountryInfo'>France:</span> +33 (xx)-xx-xx-xx-xx
                         </li>
                       </ul>
                   </div> 
