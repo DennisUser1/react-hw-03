@@ -4,8 +4,11 @@ import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
-export default [
-  { ignores: ['dist'] },
+module.exports = [
+  { 
+    root: true,
+    ignores: ['dist', '.eslintrc.cjs'],
+  },
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
@@ -33,7 +36,6 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
-      'react/jsx-pascal-case': 'off',
       'react/prop-types': 0, 
     },
   },
