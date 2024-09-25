@@ -27,7 +27,6 @@
   border-color: transparent var(--tippy-bg) transparent transparent; 
 }
 
-
 .tippy-box .marginTitleInfoTippy {
   margin-bottom: 10px; 
 }
@@ -44,7 +43,7 @@
   font-weight: 600; 
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
     .tippy-box {
         background-color: var(--tippy-bg);
         color: var(--tippy-text);

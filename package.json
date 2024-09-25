@@ -6,10 +6,12 @@
   "scripts": {
     "clean": "rmdir /s /q node_modules && npm cache clean --force",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --clearScreen",
     "lint": "eslint . -ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "author": "Denis <denidin9@yahoo.com>",
+  "license": "ISC",
   "dependencies": {
     "@tippyjs/react": "^4.2.6",
     "clsx": "^2.1.1",
