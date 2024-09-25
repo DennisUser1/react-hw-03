@@ -46,11 +46,14 @@ export default function App() {
     if (deletedContact) {
       setContacts((prevContacts) => {
         const newContacts = [...prevContacts];
-  
         if (wasLastDeleted) {
           newContacts.push(deletedContact);
         } else {
-          newContacts.splice(deletedContactIndex, 0, deletedContact);
+          if (newContacts.length > deletedContactIndex) {
+            newContacts.splice(deletedContactIndex, 0, deletedContact);
+          } else {
+            newContacts.push(deletedContact);
+          }
         }
   
         return newContacts;
@@ -60,7 +63,7 @@ export default function App() {
       setDeletedContactIndex(null);
       setWasLastDeleted(false);
     }
-  };
+  }; 
 
   const filteredContacts = contacts.filter(contact => {
     if (filterByName) {
