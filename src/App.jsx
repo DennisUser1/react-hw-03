@@ -49,21 +49,21 @@ export default function App() {
         if (wasLastDeleted) {
           newContacts.push(deletedContact);
         } else {
-          if (newContacts.length > deletedContactIndex) {
-            newContacts.splice(deletedContactIndex, 0, deletedContact);
-          } else {
+          newContacts.splice(deletedContactIndex, 0, deletedContact);
+          
+          if (deletedContactIndex >= newContacts.length) {
             newContacts.push(deletedContact);
           }
         }
-  
+
         return newContacts;
       });
-  
+
       setDeletedContact(null);
       setDeletedContactIndex(null);
       setWasLastDeleted(false);
     }
-  }; 
+  };
 
   const filteredContacts = contacts.filter(contact => {
     if (filterByName) {

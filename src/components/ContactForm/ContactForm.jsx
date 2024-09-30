@@ -14,53 +14,60 @@ import React from 'react';
 
 const formatPhoneNumber = (value) => {
   const allowedCodes = ['+38', '+1', '+49', '+48', '+33'];
-  const cleaned = value.replace(/[^\d+]/g, '');
-  const countryCode = allowedCodes.find(code => cleaned.startsWith(code));
+  const cleaned = value.replace(/[^\d+]/g, ''); 
 
+  if (cleaned.length == 0) return '';
+
+  let formatted = cleaned;
+  if (!formatted.startsWith('+')) {
+      formatted = '+' + formatted; 
+  }
+
+  const countryCode = allowedCodes.find(code => formatted.startsWith(code));
   if (countryCode) {
-    const withoutCode = cleaned.slice(countryCode.length);
-    let formatted = '';
+      const withoutCode = formatted.slice(countryCode.length);
+      let formattedNumber = '';
 
-    switch (countryCode) {
-      case '+38': // Ukraine
-        const matchUA = withoutCode.match(/^(\d{3})(\d{3})(\d{2})(\d{2})$/);
-        if (matchUA) {
-          formatted = `+38 (${matchUA[1]})-${matchUA[2]}-${matchUA[3]}-${matchUA[4]}`;
-        }
-        break;
+      switch (countryCode) {
+          case '+38': // Ukraine
+              const matchUA = withoutCode.match(/^(\d{3})(\d{3})(\d{2})(\d{2})$/);
+              if (matchUA) {
+                  formattedNumber = `+38 (${matchUA[1]})-${matchUA[2]}-${matchUA[3]}-${matchUA[4]}`;
+              }
+              break;
 
-      case '+1': // USA
-        const matchUS = withoutCode.match(/^(\d{3})(\d{3})(\d{4})$/);
-        if (matchUS) {
-          formatted = `+1 (${matchUS[1]})-${matchUS[2]}-${matchUS[3]}`;
-        }
-        break;
+          case '+1': // USA
+              const matchUS = withoutCode.match(/^(\d{3})(\d{3})(\d{4})$/);
+              if (matchUS) {
+                  formattedNumber = `+1 (${matchUS[1]})-${matchUS[2]}-${matchUS[3]}`;
+              }
+              break;
 
-      case '+49': // Germany
-        const matchDE = withoutCode.match(/^(\d{3})(\d{3})(\d{4})$/);
-        if (matchDE) {
-          formatted = `+49 (${matchDE[1]})-${matchDE[2]}-${matchDE[3]}`;
-        }
-        break;
+          case '+49': // Germany
+              const matchDE = withoutCode.match(/^(\d{3})(\d{3})(\d{4})$/);
+              if (matchDE) {
+                  formattedNumber = `+49 (${matchDE[1]})-${matchDE[2]}-${matchDE[3]}`;
+              }
+              break;
 
-      case '+48': // Poland
-        const matchPL = withoutCode.match(/^(\d{3})(\d{3})(\d{3})$/);
-        if (matchPL) {
-          formatted = `+48 (${matchPL[1]})-${matchPL[2]}-${matchPL[3]}`;
-        }
-        break;
+          case '+48': // Poland
+              const matchPL = withoutCode.match(/^(\d{3})(\d{3})(\d{3})$/);
+              if (matchPL) {
+                  formattedNumber = `+48 (${matchPL[1]})-${matchPL[2]}-${matchPL[3]}`;
+              }
+              break;
 
-      case '+33': // France
-        const matchFR = withoutCode.match(/^(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/);
-        if (matchFR) {
-          formatted = `+33 (${matchFR[1]})-${matchFR[2]}-${matchFR[3]}-${matchFR[4]}-${matchFR[5]}`;
-        }
-        break;
+          case '+33': // France
+              const matchFR = withoutCode.match(/^(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/);
+              if (matchFR) {
+                  formattedNumber = `+33 (${matchFR[1]})-${matchFR[2]}-${matchFR[3]}-${matchFR[4]}-${matchFR[5]}`;
+              }
+              break;
 
-      default:
-        return value;
-    }
-    return formatted || value; 
+          default:
+              return formatted; 
+      }
+      return formattedNumber || value; 
   }
   return value; 
 };
@@ -70,17 +77,17 @@ export default function ContactForm({ addContact }) {
   const numberFieldId = useId();
 
   const handleSubmit = (values, actions) => {
-    addContact({
-      id: nanoid(),
-      name: values.name,
-      number: values.number,
-    });
-    actions.resetForm();
+      addContact({
+          id: nanoid(),
+          name: values.name,
+          number: values.number,
+      });
+      actions.resetForm();
   };
 
   const handleNumberChange = (event, setFieldValue) => {
-    const formatted = formatPhoneNumber(event.target.value);
-    setFieldValue('number', formatted);
+      const formatted = formatPhoneNumber(event.target.value);
+      setFieldValue('number', formatted);
   };
 
   return (
@@ -138,7 +145,7 @@ export default function ContactForm({ addContact }) {
                       </ul>
                   </div> 
                   <strong className='titleInfoTippy'>Input Format:</strong>
-                  <p className='textInfoTippy'>Just type the + sign and the numbers, spaces, and other symbols will be added automatically.</p>
+                  <p className='textInfoTippy'>Just enter the numbers, the “+” symbol, spaces, and other characters will be added automatically. For example, 14155551234.</p>
                 </div>
               }
               arrow

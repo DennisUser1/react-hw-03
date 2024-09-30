@@ -19,7 +19,7 @@
   
 .number {
     font-size: 15.5px;
-    width: 165px;
+    min-width: 185px;
 }
 
 .iconCardWrapper {
@@ -101,8 +101,8 @@
     }
 
     .number {
-        font-size: 13px;
-        width: 135px;
+        font-size: 13.5px;
+        min-width: 160px;
     }    
 
     .iconReUser, .iconIphone {
