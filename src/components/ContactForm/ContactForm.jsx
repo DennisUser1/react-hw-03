@@ -148,7 +148,7 @@ export default function ContactForm({ addContact }) {
                       </ul>
                   </div> 
                   <strong className='titleInfoTippy'>Input Format:</strong>
-                  <p className='textInfoTippy'>Just enter the numbers, the “+” symbol, spaces, and other characters will be added automatically. For example, 14155551234.</p>
+                  <p className='textInfoTippy'>Just type the numbers, the “+” symbol, spaces, and other characters will be added automatically. For example, 14155551234.</p>
                 </div>
               }
               arrow
