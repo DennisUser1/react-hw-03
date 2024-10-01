@@ -1,5 +1,6 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useId } from 'react'; import clsx from 'clsx';
+import { Formik, Form, Field, ErrorMessage } from 'formik'; 
+import { useId } from 'react'; 
+import clsx from 'clsx';
 import { nanoid } from 'nanoid';
 import { FaRegUser } from 'react-icons/fa';
 import { MdPhoneIphone } from "react-icons/md";
@@ -80,11 +81,15 @@ export default function ContactForm({ addContact }) {
   const handleNumberChange = (event, setFieldValue) => {
     let value = event.target.value;
 
+    if (value == '+') {
+      setFieldValue('number', '');
+      return;
+    }
     if (!value.startsWith('+')) {
       value = '+' + value.replace(/[^\d]/g, '');
     }
+
     const formatted = formatPhoneNumber(value);
-    
     setFieldValue('number', formatted);
   };
 
@@ -110,6 +115,7 @@ export default function ContactForm({ addContact }) {
             <FaRegUser className={clsx(styles.iconName)} />
           </div>
           <ErrorMessage name="name" component="span" className={styles.error} />
+
           <div className={styles.numberLabelWrapper}>
             <label className={styles.label} htmlFor={numberFieldId}>Number</label>
             
@@ -142,7 +148,7 @@ export default function ContactForm({ addContact }) {
                       </ul>
                   </div> 
                   <strong className='titleInfoTippy'>Input Format:</strong>
-                  <p className='textInfoTippy'>Just type the + sign and the numbers, spaces, and other symbols will be added automatically.</p>
+                  <p className='textInfoTippy'>Just enter the numbers, the “+” symbol, spaces, and other characters will be added automatically. For example, 14155551234.</p>
                 </div>
               }
               arrow
@@ -161,7 +167,7 @@ export default function ContactForm({ addContact }) {
               id={numberFieldId}
               className={styles.input}
               autoComplete="off"
-              placeholder="+xx (xxx)-xxx-xx-xx"
+              placeholder="Enter number phone"
               onChange={(event) => handleNumberChange(event, setFieldValue)}
             />
             <MdPhoneIphone className={clsx(styles.iconNumber)} />
