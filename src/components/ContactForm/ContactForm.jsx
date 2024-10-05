@@ -81,7 +81,7 @@ export default function ContactForm({ addContact }) {
   const handleNumberChange = (event, setFieldValue) => {
     let value = event.target.value;
 
-    if (value == '+') {
+    if (value == '') {
       setFieldValue('number', '');
       return;
     }

@@ -12,10 +12,12 @@ export default function Contact({ id, name, number, deleteContact }) {
               {name}
               </p>
           </div>
-          <div className={styles.iconCardWrapper}>
+          <div className={styles.iconCardWrapperPhone}>
               <MdPhoneIphone className={styles.iconIphone}/>
               <p className={styles.number}>
+              <a href={`tel:${number}`} className={styles.phoneLink}>
               {number}
+            </a>
               </p>
           </div>
         </div>

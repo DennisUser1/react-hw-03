@@ -1,7 +1,7 @@
 .contactCardWrapper {
     display: flex;
     flex-direction: column;
-    row-gap: 15px;
+    row-gap: 14px;
 }
   
 .name {
@@ -19,7 +19,8 @@
   
 .number {
     font-size: 15.5px;
-    min-width: 185px;
+    width: 185px;
+    transition: color 0.25s ease-in-out;
 }
 
 .iconCardWrapper {
@@ -30,9 +31,33 @@
     max-width: 190px; 
 }
 
+.number:hover {
+    color: #0a3dca;
+}
+
+@media (hover: none) {
+    .number:hover {
+        color: #0a3dca;
+    }
+}
+  
+@media screen and (max-width: 1024px) {
+    .number:active {
+        color: #0a3dca;
+    }
+}  
+
 .iconCardWrapper:first-of-type {
     padding-bottom: 6px;
     border-bottom: 0.5px solid #6e57f4;
+}
+
+.iconCardWrapperPhone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    max-width: 230px; 
 }
 
 .iconReUser, .iconIphone {
@@ -82,16 +107,25 @@
 
     .number {
         font-size: 16px;
+        min-width: 180px;
     }
 
     .iconCardWrapper {
         max-width: 185px; 
+    }
+
+    .iconCardWrapperPhone {
+        max-width: 240px; 
     }
 }  
 
 @media screen and (min-width: 300px) and (max-width: 359px) {
     .iconCardWrapper {
         max-width: 160px; 
+    }
+
+    .iconCardWrapperPhone {
+        max-width: 180px; 
     }
     
     .name {
@@ -102,6 +136,7 @@
 
     .number {
         font-size: 13.5px;
+        width: 100%;
         min-width: 160px;
     }    
 
